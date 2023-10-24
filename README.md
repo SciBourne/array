@@ -13,22 +13,33 @@ Common Lisp eDSL for operations on array-like containers
 
 List:
 ```common-lisp
-(let ((lst-1 '(1 5 9 7))
-      (lst-2 '((1 2) (3 4) (5 6))))
+(let ((lst-a '(1 5 9 7))
+      (lst-b '((1 2)
+               (3 4)
+               (5 6))))
 
-  (index 9 lst-1))                                  ; => 2
-  (index '(3 4) lst-2 :test #'equalp))              ; => 1
+  (index 9 lst-a)                                  ; => 2
+  (index '(3 4) lst-b :test #'equalp))             ; => 1
 ```
 
 Vector:
 ```common-lisp
-(index 0 #(1 2 3 0 4 5))                             ; => 3
-(index inst-2 #(inst-1 inst-2 inst-3) :test #'eq)    ; => 1
+(let ((vec-a #(1 2 3 0 4 5))
+      (vec-b #(instance-1
+               instance-2
+               instance-3)))
+
+  (index 0 vec-a)                                  ; => 3
+  (index inst-b vec-b :test #'eq))                 ; => 1
 ```
 
 Array:
 ```common-lisp
-(index 17 :axis 1 #2a((26 8) (17 3) (12 5))          ; => '(1 0)
+(let ((arr #2a((26 8)
+               (17 3)
+               (12 5))))
+
+  (index 17 :axis 1 arr)                           ; => (1 0)
 ```
 
 <br>
@@ -37,8 +48,17 @@ Array:
 
 List:
 ```common-lisp
-(slice  0)
-(slice)
+(let ((lst-a '(1 2 3 4 5))
+      (lst-b '((1 2)
+               (3 4)
+               (5 6))))
+
+  (slice arr-a 0)                                  ; => 1
+  (slice arr-a 3)                                  ; => 4
+  (slice arr-a -1)                                 ; => 5
+  (slice arr-a -3)                                 ; => 3
+
+  (slice arr-a 3.5.-2 
 ```
 
 Vector:
