@@ -3,15 +3,49 @@ Common Lisp eDSL for operations on array-like containers
 
 <br>
 
-## API
+## Table of Contents
+
+* [API Reference](#api-reference)
+  * [Make](#make)
+    * [List](#list)
+    * [Array](#array)
+    * [Vector](#vector)
+    * [Stack](#stack)
+    * [Queue](#queue)
+    * [Double ended queue](#double-ended-queue)    
+  * [Index](#index)
+    * [List](#list-1)
+    * [Array](#array-1)
+    * [Vector](#vector-1)
+  * [Slice](#slice)
+    * [List](#list-2)
+    * [Array](#array-2)
+    * [Vector](#vector-2)
 
 <br>
 
-## Examples
+## API Reference
 
-#### Get element index
+<br>
 
-List:
+### Make
+
+#### List
+
+#### Array
+
+#### Vector
+
+#### Stack
+
+#### Queue
+
+#### Double ended queue
+
+### Index
+
+#### List
+
 ```common-lisp
 (let ((lst-a '(1 5 9 7))
       (lst-b '((1 2)
@@ -22,7 +56,18 @@ List:
   (index '(3 4) lst-b :test #'equalp))             ; => 1
 ```
 
-Vector:
+#### Array
+
+```common-lisp
+(let ((arr #2a((26 8)
+               (17 3)
+               (12 5))))
+
+  (index 17 :axis 1 arr)                           ; => (1 0)
+```
+
+#### Vector
+
 ```common-lisp
 (let ((vec-a #(1 2 3 0 4 5))
       (vec-b #(instance-1
@@ -33,20 +78,10 @@ Vector:
   (index inst-b vec-b :test #'eq))                 ; => 1
 ```
 
-Array:
-```common-lisp
-(let ((arr #2a((26 8)
-               (17 3)
-               (12 5))))
+### Slice
 
-  (index 17 :axis 1 arr)                           ; => (1 0)
-```
+#### List
 
-<br>
-
-#### Get slice
-
-List:
 ```common-lisp
 (let ((lst-a '(1 2 3 4 5))
       (lst-b '((1 2)
@@ -61,15 +96,19 @@ List:
   (slice arr-a 3.5.-2 
 ```
 
-Vector:
+#### Array
+
 ```common-lisp
 (slice)
 ```
 
-Array:
+#### Vector
+
 ```common-lisp
 (slice)
 ```
+
+
 
 
 
