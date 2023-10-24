@@ -1,5 +1,5 @@
 # Array
-Common Lisp eDSL for operations on array-like containers
+Common Lisp eDSL for operations on arrays and array-like containers
 
 <br>
 
