@@ -88,12 +88,18 @@ Common Lisp eDSL for operations on arrays and array-like containers
                (3 4)
                (5 6))))
 
-  (slice arr-a 0)                                  ; => 1
-  (slice arr-a 3)                                  ; => 4
-  (slice arr-a -1)                                 ; => 5
-  (slice arr-a -3)                                 ; => 3
+  (slice lst-a 0)                                  ; => 1
+  (slice lst-a 3)                                  ; => 4
+  (slice lst-a -1)                                 ; => 5
+  (slice lst-a -3)                                 ; => 3
 
-  (slice arr-a 3.5.-2 
+  (slice lst-a *3)                                 ;
+  (slice lst-a 3*)                                 ;
+  (slice lst-a *-3)
+  (slice lst-a -3*)
+
+  (slice lst-b )                                   ; => '(3 4)
+  (slice lst-b ()
 ```
 
 #### Array
