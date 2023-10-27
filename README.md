@@ -5,128 +5,82 @@ Common Lisp eDSL for operations on arrays and array-like containers
 
 ## Table of Contents
 
+* [Examples](#examples)
+  * [Make arrays](#make-arrays)
+  * [Get element index](#get-element-index)
+  * [Get slice](#get-slice)
 * [API Reference](#api-reference)
-  * [Make](#make)
-    * [List](#list)
-    * [Array](#array)
-    * [Vector](#vector)
-    * [Stack](#stack)
-    * [Queue](#queue)
-    * [Double ended queue](#double-ended-queue)    
-  * [Index](#index)
-    * [List](#list-1)
-    * [Array](#array-1)
-    * [Vector](#vector-1)
-  * [Slice](#slice)
-    * [List](#list-2)
-    * [Array](#array-2)
-    * [Vector](#vector-2)
 
+<br>
+<br>
+
+## Examples
+
+<br>
+
+### Make arrays
+
+Создание вектор-строки:
+```common-lisp
+(array 10)
+```
+```common-lisp
+;  #(0 0 0 0 0 0 0 0 0 0)
+```
+
+<br>
+
+Создание вектор-столбца:
+```common-lisp
+(array (10 1))
+```
+```common-lisp
+;  #10A((0)
+;       (0)
+;       (0)
+;       (0)
+;       (0)
+;       (0)
+;       (0)
+;       (0)
+;       (0)
+;       (0))
+```
+
+<br>
+<br>
+
+### Get element index
+
+```common-lisp
+
+```
+```common-lisp
+
+```
+
+### Get slice
+
+```common-lisp
+
+```
+
+```common-lisp
+
+```
+
+<br>
 <br>
 
 ## API Reference
 
-<br>
 
-### Make
 
-#### List
 
-```common-lisp
-(array (2 2) :as list)
-```
 
-#### Array
 
-```common-lisp
-(array 10)
-(array (9 3) :type string)
-(array (2 5 2) :type double-float)
-```
 
-#### Vector
 
-```common-lisp
-(array (2 2) :as vector)
-```
-
-#### Stack
-
-#### Queue
-
-#### Double ended queue
-
-### Index
-
-#### List
-
-```common-lisp
-(let ((lst-a '(1 5 9 7))
-      (lst-b '((1 2)
-               (3 4)
-               (5 6))))
-
-  (index 9 lst-a)                                  ; => 2
-  (index '(3 4) lst-b :test #'equalp))             ; => 1
-```
-
-#### Array
-
-```common-lisp
-(let ((arr #2a((26 8)
-               (17 3)
-               (12 5))))
-
-  (index 17 :axis 1 arr)                           ; => (1 0)
-```
-
-#### Vector
-
-```common-lisp
-(let ((vec-a #(1 2 3 0 4 5))
-      (vec-b #(instance-1
-               instance-2
-               instance-3)))
-
-  (index 0 vec-a)                                  ; => 3
-  (index inst-b vec-b :test #'eq))                 ; => 1
-```
-
-### Slice
-
-#### List
-
-```common-lisp
-(let ((lst-a '(1 2 3 4 5))
-      (lst-b '((1 2)
-               (3 4)
-               (5 6))))
-
-  (slice lst-a 0)                                  ; => 1
-  (slice lst-a 3)                                  ; => 4
-  (slice lst-a -1)                                 ; => 5
-  (slice lst-a -3)                                 ; => 3
-
-  (slice lst-a *3)                                 ;
-  (slice lst-a 3*)                                 ;
-  (slice lst-a *-3)
-  (slice lst-a -3*)
-
-  (slice lst-b )                                   ; => '(3 4)
-  (slice lst-b ()
-```
-
-#### Array
-
-```common-lisp
-(slice)
-```
-
-#### Vector
-
-```common-lisp
-(slice)
-```
 
 
 
