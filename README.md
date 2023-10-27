@@ -32,9 +32,23 @@ Common Lisp eDSL for operations on arrays and array-like containers
 
 #### List
 
+```common-lisp
+(array (2 2) :as list)
+```
+
 #### Array
 
+```common-lisp
+(array 10)
+(array (9 3) :type string)
+(array (2 5 2) :type double-float)
+```
+
 #### Vector
+
+```common-lisp
+(array (2 2) :as vector)
+```
 
 #### Stack
 
